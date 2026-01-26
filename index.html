@@ -1,0 +1,1374 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Depiteria — шугаринг, воск и лазерная эпиляция в Москве</title>
+  <meta name="description" content="Сеть студий депиляции Depiteria: шугаринг, восковая депиляция и лазерная эпиляция. Онлайн‑запись, честные цены, чисто и аккуратно.">
+  <meta name="robots" content="index,follow">
+  <link rel="icon" href="assets/favicon.png">
+  <style>
+    :root {
+      --bg: #FFF9F6;
+      --text: #111111;
+      --muted: rgba(17,17,17,.62);
+      --line: rgba(17,17,17,.10);
+      --shadow: none;
+
+      --accent: #FFE6DF;
+      --accent2: #FFF1EB;
+      --soft: #FFF6F2;
+
+      --card: rgba(255,255,255,.86);
+      --btn: #89D0B8;        /* мягкий зелёный */
+      --btnText: #082017;
+
+      --radius: 18px;
+      --radius2: 18px;
+      --max: 1120px;
+      --headerH: 72px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; }
+    html { scroll-behavior: smooth; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--accent2), var(--bg) 42%);
+      line-height: 1.45;
+    }
+    a { color: inherit; text-decoration:none; }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 18px; }
+
+    .top {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: saturate(180%) blur(10px);
+      background: rgba(255,255,255,.72);
+      border-bottom: 1px solid var(--line);
+    }
+    .top-inner {
+      display:flex; align-items:center; justify-content: space-between;
+      padding: 9.6px 0; gap: 14px;
+    }
+    .brand { display:flex; align-items:center; gap: 12px; min-width: 220px; }
+    .brand img { height: 80px; width:auto; display:block; }
+    .nav { display:flex; gap: 14px; flex-wrap: wrap; justify-content: flex-end; }
+    .nav a { padding: 6.4px 8px; border-radius: 999px; color: var(--muted); font-size: 0.9em; }
+    .nav a:hover { background: rgba(0,0,0,.05); }
+
+    .btn {
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 12px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      font-weight: 600;
+      gap: 10px;
+      transition: background .15s ease, border-color .15s ease;
+      white-space: nowrap;
+    }
+    .btn:active { transform: translateY(1px); }
+    .btn:not(.btn-primary):hover { background: rgba(17,17,17,.03); }
+    .btn-primary { background: var(--btn); color: var(--btnText); border-color: rgba(11,36,26,.18); }
+    .btn-primary:hover { filter: brightness(0.97); }
+    .btn-ghost { background: transparent; }
+    .btn-ghost:hover { background: rgba(17,17,17,.03); }
+    .btn-sm { padding: 10px 14px; font-size: 14px; }
+
+    .hero { padding: 38px 0 26px; }
+    .hero-grid {
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+    .panel {
+      background: rgba(255,255,255,.72);
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .hero h1 {
+      font-size: clamp(28px, 3.5vw, 44px);
+      line-height: 1.05;
+      margin: 0 0 12px;
+      letter-spacing: -0.02em;
+    }
+    .lead { font-size: 16px; color: rgba(0,0,0,.74); margin: 0 0 16px; }
+    .ticks { display:grid; gap: 10px; margin: 16px 0 0; }
+    .tick { display:flex; gap:10px; align-items:flex-start; color: rgba(0,0,0,.78); }
+    .tick .dot {width:26px; height:26px; border-radius:12px; display:grid; place-items:center; font-weight:900; color:var(--text); background: rgba(17,17,17,.02); border:1px solid var(--line);}
+    .hero-actions { display:flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+
+    .promo {
+      background: rgba(255,255,255,.80);
+      border: 1px solid var(--line);
+    }
+    .promo .kicker{display:inline-flex; align-items:center; gap:8px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); padding:6px 10px; border-radius:999px; background: rgba(17,17,17,.04); border: 1px solid rgba(17,17,17,.08); }
+    .promo h2 { margin: 12px 0 8px; font-size: 28px; line-height: 1.1; letter-spacing: -0.01em; }
+    .promo .code{display:inline-flex; gap:8px; align-items:center; padding:10px 12px; border-radius:12px; background: rgba(17,17,17,.03); border:1px solid var(--line); font-weight:800;}
+    .promo ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+
+    section { padding: 26px 0; }
+    .section-title {
+      display:flex; align-items:flex-end; justify-content: space-between;
+      gap: 14px; margin-bottom: 14px;
+    }
+    .section-title h2 { margin: 0; font-size: 22px; letter-spacing: -0.01em; }
+    .section-title p { margin: 0; color: var(--muted); }
+
+    .cards { display:grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      display:flex; flex-direction: column;
+      min-height: 420px;
+    }
+    .card-top { padding: 18px 18px 12px; }
+    .badge{width: 26px; height: 26px; border-radius:12px; display:grid; place-items:center; background: rgba(17,17,17,.03); border:1px solid var(--line); font-weight:900; font-size:12px; letter-spacing:.08em;}
+    .card h3 { margin: 0 0 8px; font-size: 18px; }
+    .card p { margin: 0; color: rgba(0,0,0,.68); }
+    .card-media { padding: 0 18px 12px; }
+    .card-media img {
+      width: 100%; height: 220px; object-fit: cover;
+      border-radius: 18px; border: 1px solid rgba(0,0,0,.10);
+      background: #f2f2f2;
+    }
+    .card-actions { margin-top: auto; padding: 0 18px 18px; display:flex; gap:10px; flex-wrap: wrap; }
+
+    .locs { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .loc {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+      padding: 16px;
+      display:flex; align-items:center; justify-content: space-between; gap: 12px;
+    }
+    .loc-title { font-weight: 800; }
+    .loc-addr { color: rgba(0,0,0,.68); margin-top: 4px; font-size: 14px; }
+
+    .gallery { display:grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .g-item {
+      border: 1px solid var(--line); border-radius: var(--radius2);
+      overflow:hidden; background: var(--card);
+      box-shadow: var(--shadow); padding: 0; cursor: pointer;
+      /* Crop blocks ~10% from bottom (slightly shorter tiles) */
+      aspect-ratio: 10 / 9;
+    }
+    /* Gallery: bottom 2 rows (banner-like images) — keep full width, crop ~10% top/bottom */
+    .g-item.g-crop-banners{ aspect-ratio: 5 / 3; }
+    /* Fallback (if edit-me.js is disabled): 3-column grid => items 4..9 are rows 2-3 */
+    .gallery .g-item:nth-child(n+4){ aspect-ratio: 5 / 3; }
+    .g-item img { width:100%; height:100%; display:block; object-fit: cover; background: transparent; transition: transform .18s ease; }
+
+    footer {
+      padding: 26px 0 40px;
+      border-top: 1px solid var(--line);
+      background: rgba(255,255,255,.58);
+    }
+    .foot-grid { display:grid; grid-template-columns: 1.1fr .9fr; gap: 14px; }
+    .foot-note { color: var(--muted); font-size: 14px; }
+    .foot-links { display:flex; flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+    .pill {
+      padding: 10px 12px; border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      font-weight: 650; font-size: 14px;
+    }
+    .pill:hover { background: rgba(255,255,255,.98); }
+
+    .modal {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.72);
+      display:none; align-items:center; justify-content:center;
+      padding: 22px; z-index: 100;
+    }
+    .modal.open { display:flex; }
+    .modal img {
+      max-width: min(100%, 980px);
+      max-height: 88vh;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: 0 24px 72px rgba(0,0,0,.35);
+      background: #111;
+    }
+    .modal .close {
+      position:absolute; top: 14px; right: 14px;
+      width: 44px; height: 44px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.45);
+      color: #fff;
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; font-size: 18px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .cards { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr 1fr; }
+      .locs { grid-template-columns: 1fr; }
+      .foot-grid { grid-template-columns: 1fr; }
+      .foot-links { justify-content: flex-start; }
+    }
+    @media (max-width: 520px) {
+      .gallery { grid-template-columns: 1fr; }
+    }
+  
+
+/* Header (MVP-style) */
+.nav-inner{display:flex; align-items:center; justify-content:space-between; gap:14px; padding:12px 0;}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; color:inherit;}
+.brand img{border-radius:12px;}
+.brand-text{display:flex; flex-direction:column; line-height:1.05}
+.brand-title{font-weight:800; letter-spacing:.08em; font-size:14.4px}
+.brand-sub{font-size:14.4px; color:var(--muted)}
+.menu{display:flex; gap:14px; flex-wrap:wrap; align-items:center; justify-content:center}
+.menu a{color:var(--muted); text-decoration:none; font-weight:600; font-size:19.5px}
+.menu a:hover{color:var(--text); background: rgba(17,17,17,.03);}
+.cta{display:flex; gap:10px; flex-wrap:wrap; align-items:center; justify-content:flex-end}
+
+/* Header sizing (-20%) + 1-line buttons */
+.top .nav-inner{padding:9.6px 0; gap:11px;}
+.top .brand{min-width: 0;}
+.top .brand img{height:64px; width:auto;}
+.top .brand-title{font-size:11.5px;}
+.top .brand-sub{font-size:11.5px;}
+.top .menu{gap:12px;}
+.top .menu a{font-size:15.6px; padding: 5px 6px;}
+.top .cta{flex-wrap:nowrap; gap:8px;}
+.top .btn{padding: 9.6px 12.8px; font-size:14px;}
+
+/* Header: subtle pulse on booking button */
+.header-booking{animation: headerPulse 0.6s ease-in-out infinite; transform-origin:center;}
+@keyframes headerPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.03)}}
+@media (prefers-reduced-motion: reduce){ .header-booking{animation:none;} }
+
+/* Section variants */
+.section-soft{background: transparent; border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+
+/* Prices */
+.price-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:14px}
+.price-card{background:var(--card); border:1px solid var(--line); border-radius:var(--radius2); padding:16px; box-shadow:none}
+.price-card h3{margin:0 0 10px; font-size:16px}
+.price-list{list-style:none; padding:0; margin:0 0 12px; display:flex; flex-direction:column; gap:8px}
+.price-list li{display:flex; justify-content:space-between; gap:10px; padding:8px 0; border-bottom:1px dashed var(--line)}
+.price-list li:last-child{border-bottom:none}
+
+/* FAQ */
+.faq{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.faq details{background:var(--card); border:1px solid var(--line); border-radius:var(--radius2); padding:12px 14px}
+.faq summary{cursor:pointer; font-weight:800}
+.faq-body{padding-top:10px; color:var(--muted)}
+.faq-body ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:6px}
+
+/* Gallery: show full image + hover zoom */
+.g-item img { width:100%; height:100%; display:block; object-fit: cover; background: transparent; transition: transform .18s ease; }
+.g-item:hover img{transform:scale(1.03)}
+@media (prefers-reduced-motion: reduce){
+  .g-item img { width:100%; height:100%; display:block; object-fit: cover; background: transparent; transition: transform .18s ease; }
+  .g-item:hover img{transform:none}
+}
+@media (max-width: 980px){
+  .price-grid{grid-template-columns:1fr}
+  .faq{grid-template-columns:1fr}
+  .menu{display:none}
+}
+
+    section[id] { scroll-margin-top: calc(var(--headerH) + 16px); }
+
+
+/* Mobile menu */
+.burger{
+  display:none;
+  width:44px; height:44px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.78);
+  align-items:center; justify-content:center;
+  flex-direction: column;
+  gap:4px;
+  padding: 0;
+}
+.burger span{
+  display:block;
+  width:18px; height:2px;
+  background: rgba(17,17,17,.70);
+  border-radius: 2px;
+}
+.drawer{
+  position: fixed; inset: 0;
+  display:none;
+  z-index: 120;
+}
+.drawer.open{ display:block; }
+.drawer-backdrop{
+  position:absolute; inset:0;
+  background: rgba(17,17,17,.42);
+}
+.drawer-panel{
+  position:absolute;
+  right: 12px; left: 12px; top: 12px;
+  margin: 0 auto;
+  max-width: 520px;
+  border-radius: var(--radius2);
+  background: rgba(255,255,255,.94);
+  border: 1px solid var(--line);
+  padding: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.18);
+}
+.drawer-head{
+  display:flex; align-items:center; justify-content: space-between;
+  gap: 10px; padding: 6px 4px 10px;
+}
+.drawer-title{ font-weight: 800; letter-spacing: .02em; }
+.drawer-close{
+  width:44px; height:44px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.86);
+  cursor:pointer;
+}
+.drawer-links{
+  display:grid; gap: 6px;
+  padding: 6px 0 10px;
+}
+.drawer-links a{
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(17,17,17,.08);
+  background: rgba(17,17,17,.02);
+  font-weight: 700;
+  color: rgba(17,17,17,.78);
+}
+.drawer-links a:hover{ background: rgba(17,17,17,.04); color: var(--text); }
+.drawer-cta{
+  display:flex; gap: 10px; flex-wrap: wrap;
+  padding-top: 10px;
+}
+
+
+@media (max-width: 980px){
+  .cta{flex-wrap:nowrap;}
+  .cta .hide-on-mobile{display:none;}
+  .burger{display:inline-flex;}
+  .btn-primary{padding: 10px 12px; font-size:14px;}
+}
+@media (max-width: 520px){
+  /* Mobile header only: taller header + larger logo/buttons, without overlaps */
+  .brand-text{display:none;}
+  /* Make the header ~50% taller, buttons ~30% bigger, and logo 2x (mobile only) */
+  .top .nav-inner{padding:14.4px 0; min-height:108px; gap:10px; align-items:center;}
+  .top .brand img{width:64px; height:64px;}
+  .top .cta{gap:8px; flex-wrap:wrap;}
+  .top .btn{padding:9px 13px; font-size:16px;}
+  .burger{width:52px; height:52px;}
+  .burger span{width:24px; height:3px;}
+}
+
+
+/* Bold Poster tweaks */
+.hero{
+  background: radial-gradient(900px 520px at 85% 10%, rgba(255, 145, 124, .22), transparent 60%),
+              radial-gradient(800px 480px at 5% 5%, rgba(137, 208, 184, .22), transparent 58%);
+}
+h1{
+  letter-spacing: -0.03em;
+}
+.promo{
+  position: relative;
+}
+.promo:before{
+  content: "NEW";
+  position:absolute;
+  top: 16px; right: 16px;
+  transform: rotate(calc(8deg + var(--newSpin, 0deg)));
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: rgba(17,17,17,.92);
+  color: #fff;
+  font-weight: 900;
+  letter-spacing: .18em;
+  font-size: 11px;
+}
+.code{
+  border-style: solid;
+  background: rgba(255,255,255,.78);
+}
+.btn-primary{
+  box-shadow: 0 12px 26px rgba(17,17,17,.10);
+}
+.cards .card{
+  border-width: 1px;
+}
+
+    /* ====== Extra FX (desktop only) ====== */
+    .fly-hidden{ opacity: 0; }
+    .fly-will{ will-change: transform, opacity; }
+    .cursor-fx{
+      position: fixed;
+      top: 0; left: 0;
+      width: 26px; height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.9), rgba(137,208,184,.55), rgba(255,230,223,.15));
+      filter: blur(0px);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      z-index: 9999;
+      opacity: .95;
+      mix-blend-mode: multiply;
+      transition: opacity .15s ease;
+    }
+    .cursor-fx.is-down{ opacity: 1; }
+
+    @media (pointer: coarse), (prefers-reduced-motion: reduce){
+      .cursor-fx{ display:none !important; }
+    }
+
+    /* Typing effect (services titles) */
+    .typing-caret{
+      display: inline-block;
+      width: 1ch;
+      margin-left: 2px;
+      opacity: .7;
+      animation: caretBlink 1s steps(2, end) infinite;
+    }
+    @keyframes caretBlink{
+      50%{ opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce){
+      .typing-caret{ display:none; }
+    }
+
+    /* Bottom marquee (always-on) */
+    .marquee-bar{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      height: 42px;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: rgba(17,17,17,.10);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(17,17,17,.10);
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+    }
+    .marquee-track{
+      display: flex;
+      gap: 40px;
+      white-space: nowrap;
+      will-change: transform;
+      animation: marquee 16s linear infinite;
+      padding-left: 16px;
+      padding-right: 16px;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+    .marquee-track span{
+      color: rgba(17,17,17,.88);
+    }
+    @keyframes marquee{
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (max-width: 480px){
+      .marquee-bar{ height: 52px; }
+      .marquee-track{ animation-duration: 14s; }
+    }
+    body{ padding-bottom: 52px; }
+    @media (max-width:480px){ body{ padding-bottom: 72px; } }
+
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "Depiteria",
+    "description": "Сеть студий депиляции в Москве: шугаринг, восковая депиляция и лазерная эпиляция.",
+    "url": "https://yandex.com/maps/213/moscow/chain/depiteria/153959652754/",
+    "telephone": "+7 977 817-81-01",
+    "areaServed": "Москва",
+    "sameAs": ["https://t.me/Depiteria", "https://vk.com/depiteria", "https://www.youtube.com/@Depiteria", "https://www.instagram.com/depiteria?igsh=MXgza2ExNmhyOHpueg=="]
+  }
+  </script>
+  <script src="edit-me.js"></script>
+</head>
+<body>
+  <div id="top"></div>
+  <div class="top">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" id="brandHome" href="#top" aria-label="Depiteria — на главную">
+          <img src="assets/logo.webp" alt="Depiteria" width="44" height="44">
+          <div class="brand-text">
+            <div class="brand-title">DEPITERIA</div>
+            <div class="brand-sub">студия депиляции</div>
+          </div>
+        </a>
+
+        <nav class="menu" aria-label="Навигация">
+          <a href="#services">Услуги</a>
+          <a href="#prices">Цены</a>
+          <a href="#locations">Филиалы</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="cta">
+          <a class="btn btn-ghost hide-on-mobile" href="https://wa.me/79778178101" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-ghost hide-on-mobile" href="https://t.me/Depiteria" target="_blank" rel="noopener">Telegram</a>
+          <button class="btn btn-ghost btn-call" type="button" data-smart-call data-tel="+79778178101" data-phone="+7 977 817‑81‑01">Позвонить</button>
+          <a class="btn btn-primary header-booking" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Онлайн‑запись</a>
+          <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false" type="button"><span></span><span></span><span></span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-backdrop" data-close="1"></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Меню">
+    <div class="drawer-head">
+      <div class="drawer-title">Меню</div>
+      <button class="drawer-close" data-close="1" aria-label="Закрыть" type="button">✕</button>
+    </div>
+
+    <nav class="drawer-links" aria-label="Разделы сайта">
+      <a href="#services">Услуги</a>
+      <a href="#prices">Цены</a>
+      <a href="#locations">Филиалы</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="drawer-cta">
+      <a class="btn btn-primary" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Онлайн‑запись</a>
+      <button class="btn btn-ghost btn-call" type="button" data-smart-call data-tel="+79778178101" data-phone="+7 977 817‑81‑01">Позвонить</button>
+      <a class="btn btn-ghost" href="https://wa.me/79778178101" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-ghost" href="https://t.me/Depiteria" target="_blank" rel="noopener">Telegram</a>
+    </div>
+  </div>
+</div>
+
+<main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="panel fly-hidden fly-will" data-fly-hero="left">
+            <h1>Гладкость без переплат</h1>
+            <p class="lead">
+              Depiteria — сеть студий депиляции в Москве: <strong>шугаринг</strong>, <strong>воск</strong> и <strong>лазер</strong>.
+              Мы оптимизировали расходы — чтобы Вы платили меньше.
+            </p>
+
+            <div class="ticks">
+              <div class="tick"><div class="dot">✓</div><div>Онлайн‑запись и удалённый администратор — без лишней “салонной” наценки.</div></div>
+              <div class="tick"><div class="dot">✓</div><div>Только рабочий кабинет и мастер — максимум пользы, минимум декораций.</div></div>
+              <div class="tick"><div class="dot">✓</div><div>Чисто, честно, доступно</div></div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Записаться онлайн</a>
+              <a class="btn btn-ghost" href="https://wa.me/79778178101" target="_blank" rel="noopener">Написать в WhatsApp</a>
+        <a class="btn btn-ghost" href="https://t.me/Depiteria" target="_blank" rel="noopener">Написать в Telegram</a>
+              <a class="btn btn-ghost" href="https://yandex.com/maps/213/moscow/chain/depiteria/153959652754/" target="_blank" rel="noopener">Филиалы на карте</a>
+            </div>
+          </div>
+
+          <aside class="panel promo fly-hidden fly-will" id="promo" data-fly-hero="right">
+            <span class="kicker">Спец‑предложение</span>
+            <h2>−30% для новых клиентов</h2>
+            <div class="code">Промокод: <span style="font-size:20px">NEW30</span></div>
+            <ul>
+              <li>При онлайн‑записи укажите промокод в комментарии.</li><li>При записи через администратора назовите промокод.</li><li>Максимальная скидка — 1000 ₽.</li><li>Скидка не действует на комплексы</li>
+            </ul>
+            <div class="hero-actions" style="margin-top:16px">
+              <a class="btn btn-primary" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Применить промокод</a>
+              <a class="btn btn-ghost" href="#gallery">Посмотреть примеры цен</a>
+            </div>
+            <p style="margin:14px 0 0; color:rgba(0,0,0,.60); font-size:13px;">
+              *Скидка действует для новых клиентов. Условия могут обновляться — лучше уточнить в мессенджере.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Услуги</h2>
+          <p></p>
+        </div>
+        <div class="cards">
+          <article class="card" id="sugaring">
+      <div class="card-top">
+<h3>Шугаринг</h3>
+        <p>Сахарная депиляция для деликатных зон и идеальной гладкости.</p>
+      </div>
+      <div class="card-media">
+        <img src="assets/sugaring_banner.webp" alt="Шугаринг" loading="lazy">
+      </div>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Записаться онлайн</a>
+        <a class="btn btn-ghost" href="https://wa.me/79778178101" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-ghost" href="https://t.me/Depiteria" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </article>
+<article class="card" id="wax">
+      <div class="card-top">
+<h3>Восковая депиляция</h3>
+        <p>Быстро, чисто, аккуратно. Подходит для больших зон и экспресс‑результата.</p>
+      </div>
+      <div class="card-media">
+        <img src="assets/wax_banner.webp" alt="Восковая депиляция" loading="lazy">
+      </div>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Записаться онлайн</a>
+        <a class="btn btn-ghost" href="https://wa.me/79778178101" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-ghost" href="https://t.me/Depiteria" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </article>
+<article class="card" id="laser">
+      <div class="card-top">
+<h3>Лазерная эпиляция</h3>
+        <p>Долгосрочный эффект и комфортные процедуры. Подберём протокол под Вашу кожу.</p>
+      </div>
+      <div class="card-media">
+        <img src="assets/laser_price.webp" alt="Лазерная эпиляция" loading="lazy">
+      </div>
+      <div class="card-actions">
+        <a class="btn btn-primary" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Записаться онлайн</a>
+        <a class="btn btn-ghost" href="https://wa.me/79778178101" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-ghost" href="https://t.me/Depiteria" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="prices" class="section section-soft">
+      <div class="container">
+        <div class="section-head">
+          <h2>Цены и примеры услуг</h2>
+          <p class="muted">Скидка −30% для новых клиентов по промокоду <b>NEW30</b>. Максимальная скидка — <b>1000 ₽</b>.</p>
+        </div>
+
+        <div class="price-grid">
+          <div class="price-card">
+            <h3>Шугаринг</h3>
+            <ul class="price-list">
+              <li><span>Глубокое бикини</span><span><b>1330 ₽</b> <span class="muted">вместо 1900 ₽</span></span></li>
+              <li><span>Ноги полностью</span><span><b>2100 ₽</b> <span class="muted">вместо 3000 ₽</span></span></li>
+              <li><span>Подмышки</span><span><b>490 ₽</b> <span class="muted">вместо 700 ₽</span></span></li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Записаться онлайн</a>
+              <a class="btn btn-ghost" href="https://wa.me/79778178101" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-ghost" href="https://t.me/Depiteria" target="_blank" rel="noopener">Telegram</a>
+            </div>
+          </div>
+
+          <div class="price-card">
+            <h3>Восковая депиляция</h3>
+            <ul class="price-list">
+              <li><span>Глубокое бикини</span><span><b>1330 ₽</b> <span class="muted">вместо 1900 ₽</span></span></li>
+              <li><span>Ноги полностью</span><span><b>1260 ₽</b> <span class="muted">вместо 1800 ₽</span></span></li>
+              <li><span>Подмышки</span><span><b>490 ₽</b> <span class="muted">вместо 700 ₽</span></span></li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Записаться онлайн</a>
+              <a class="btn btn-ghost" href="https://wa.me/79778178101" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-ghost" href="https://t.me/Depiteria" target="_blank" rel="noopener">Telegram</a>
+            </div>
+          </div>
+
+          <div class="price-card">
+            <h3>Лазерная эпиляция</h3>
+            <ul class="price-list">
+              <li><span>Подмышки</span><span><b>595 ₽</b> <span class="muted">вместо 850 ₽</span></span></li>
+              <li><span>Глубокое бикини</span><span><b>1540 ₽</b> <span class="muted">вместо 2200 ₽</span></span></li>
+              <li><span>Ноги полностью</span><span><b>2600 ₽</b> <span class="muted">вместо 3600 ₽</span></span></li>
+            </ul>
+            <div class="card-actions">
+              <a class="btn btn-primary" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Записаться онлайн</a>
+              <a class="btn btn-ghost" href="https://wa.me/79778178101" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-ghost" href="https://t.me/Depiteria" target="_blank" rel="noopener">Telegram</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    
+
+    <section id="locations">
+      <div class="container">
+        <div class="section-title">
+          <h2>Филиалы</h2>
+          <p>Выберите удобную локацию и запишитесь онлайн.</p>
+        </div>
+
+        <div class="locs">
+          <div class="loc">
+      <div class="loc-main">
+        <div class="loc-title">Римская / Площадь Ильича</div>
+        <div class="loc-addr">ул. Новорогожская, 8</div>
+      </div>
+      <div class="loc-actions">
+        <a class="btn btn-primary btn-sm" href="https://dikidi.ru/684025" target="_blank" rel="noopener">Запись</a>
+      </div>
+    </div>
+<div class="loc">
+      <div class="loc-main">
+        <div class="loc-title">Митино</div>
+        <div class="loc-addr">ул. Барышиха, 14к2</div>
+      </div>
+      <div class="loc-actions">
+        <a class="btn btn-primary btn-sm" href="https://dikidi.ru/1308746" target="_blank" rel="noopener">Запись</a>
+      </div>
+    </div>
+<div class="loc">
+      <div class="loc-main">
+        <div class="loc-title">Сокольники</div>
+        <div class="loc-addr">ул. Барболина, 4</div>
+      </div>
+      <div class="loc-actions">
+        <a class="btn btn-primary btn-sm" href="https://dikidi.ru/1686191" target="_blank" rel="noopener">Запись</a>
+      </div>
+    </div>
+<div class="loc">
+      <div class="loc-main">
+        <div class="loc-title">Электрозаводская</div>
+        <div class="loc-addr">ул. Большая Почтовая, 18/20к15</div>
+      </div>
+      <div class="loc-actions">
+        <a class="btn btn-primary btn-sm" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Запись</a>
+      </div>
+    </div>
+<div class="loc">
+      <div class="loc-main">
+        <div class="loc-title">Митино (Новотушинский)</div>
+        <div class="loc-addr">Новотушинский проезд, 6к1</div>
+      </div>
+      <div class="loc-actions">
+        <a class="btn btn-primary btn-sm" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Запись</a>
+      </div>
+    </div>
+        </div>
+
+        <div class="hero-actions" style="margin-top:14px">
+          <a class="btn btn-ghost" href="https://2gis.ru/moscow/branches/70000001080677764" target="_blank" rel="noopener">Все филиалы в 2ГИС</a>
+<a class="btn btn-ghost" href="https://yandex.com/maps/213/moscow/chain/depiteria/153959652754/" target="_blank" rel="noopener">Все филиалы в Яндекс Картах</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-title">
+          <h2>Фото и примеры акций</h2>
+          <p></p>
+        </div>
+        <div class="gallery">
+          <button class="g-item" data-full="assets/wax_banner.webp" aria-label="Открыть изображение">
+      <img src="assets/wax_banner.webp" alt="wax banner" loading="lazy">
+    </button>
+<button class="g-item" data-full="assets/wax_bikini.webp" aria-label="Открыть изображение">
+      <img src="assets/wax_bikini.webp" alt="wax bikini" loading="lazy">
+    </button>
+<button class="g-item" data-full="assets/mix_small.webp" aria-label="Открыть изображение">
+      <img src="assets/mix_small.webp" alt="mix small" loading="lazy">
+    </button>
+<button class="g-item" data-full="assets/mix_big.webp" aria-label="Открыть изображение">
+      <img src="assets/mix_big.webp" alt="mix big" loading="lazy">
+    </button>
+<button class="g-item" data-full="assets/mix_banner.webp" aria-label="Открыть изображение">
+      <img src="assets/mix_banner.webp" alt="mix banner" loading="lazy">
+    </button>
+<button class="g-item" data-full="assets/mix_banner_laser1.webp" aria-label="Открыть изображение">
+      <img src="assets/mix_banner_laser1.webp" alt="mix banner laser1" loading="lazy">
+    </button>
+<button class="g-item" data-full="assets/mix_banner_laser2.webp" aria-label="Открыть изображение">
+      <img src="assets/mix_banner_laser2.webp" alt="mix banner laser2" loading="lazy">
+    </button>
+<button class="g-item" data-full="assets/laser_price.webp" aria-label="Открыть изображение">
+      <img src="assets/laser_price.webp" alt="laser price" loading="lazy">
+    </button>
+<button class="g-item" data-full="assets/sugaring_banner.webp" aria-label="Открыть изображение">
+      <img src="assets/sugaring_banner.webp" alt="sugaring banner" loading="lazy">
+    </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>FAQ</h2>
+          <p class="muted">Частые вопросы перед первой процедурой.</p>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Как подготовиться к депиляции?</summary>
+            <div class="faq-body">
+              <ul>
+                <li>Длина волос — примерно 4–6 мм (обычно это 10–14 дней после бритья).</li>
+                <li>За сутки не используйте агрессивные скрабы/кислоты на зоне процедуры.</li>
+                <li>В день процедуры — душ, без масел и плотных кремов на зоне депиляции.</li>
+                <li>Если есть чувствительность кожи — предупредите мастера до начала.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>Больно ли это?</summary>
+            <div class="faq-body">
+              <p>Ощущения индивидуальны и зависят от зоны, цикла и “привычки” кожи. Первая процедура обычно чувствительнее, дальше — легче. Мы работаем быстро и аккуратно, чтобы минимизировать дискомфорт.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Есть противопоказания?</summary>
+            <div class="faq-body">
+              <p>Да. К типовым относятся повреждения кожи (ранки, сильное раздражение), активные воспаления/инфекции, некоторые кожные заболевания, обострение хронических состояний. Если есть сомнения — лучше заранее написать нам в WhatsApp/Telegram и уточнить по Вашей ситуации.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Как записаться и что делать, если я опаздываю?</summary>
+            <div class="faq-body">
+              <p>Запись — через онлайн‑форму или сообщение в мессенджер. Если опаздываете, пожалуйста, предупредите заранее: мы подскажем, можно ли сдвинуть время или сократить услугу без потери качества.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contacts">
+      <div class="container">
+        <div class="section-title">
+          <h2>Контакты</h2>
+          <p>Запись — через Dikidi. Вопросы — через Мессенджер.</p>
+        </div>
+
+        <div class="panel">
+          <div class="hero-actions" style="margin-top:0">
+            <a class="btn btn-primary" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Онлайн‑запись</a>
+            <button class="btn btn-ghost btn-call" type="button" data-smart-call data-tel="+79778178101" data-phone="+7 977 817‑81‑01">Позвонить</button>
+            <a class="btn btn-ghost" href="https://wa.me/79778178101" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn btn-ghost" href="https://t.me/Depiteria" target="_blank" rel="noopener">Telegram</a>
+            <a class="btn btn-ghost" href="https://vk.com/depiteria" target="_blank" rel="noopener">VK</a>
+            <a class="btn btn-ghost" href="https://www.youtube.com/@Depiteria" target="_blank" rel="noopener">YouTube</a>
+            <a class="btn btn-ghost" href="https://www.avito.ru/brands/i372193086" target="_blank" rel="noopener">Avito</a>
+          </div>
+
+          <div style="margin-top: 14px; color: rgba(0,0,0,.68); font-size: 14px;">
+            <strong>График:</strong> ежедневно 10:00–21:00.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-note">
+            <strong>Юридическая информация:</strong><br>
+            ИП Хориняк Анна Дмитриевна, ИНН 540132999268
+          </div>
+          <div class="foot-note" style="margin-top:10px">
+            © <span id="y"></span> Depiteria. Все права защищены.
+          </div>
+        </div>
+        <div class="foot-links">
+          <a class="pill" href="privacy.html">Политика конфиденциальности</a>
+          <a class="pill" href="https://dikidi.net/g372810?p=0.sp" target="_blank" rel="noopener">Запись</a>
+          <a class="pill" href="https://yandex.com/maps/213/moscow/chain/depiteria/153959652754/" target="_blank" rel="noopener">Филиалы</a>
+          <a class="pill" href="https://wa.me/79778178101" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="pill" href="https://t.me/Depiteria" target="_blank" rel="noopener">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal" id="modal" aria-hidden="true">
+    <button class="close" id="close" aria-label="Закрыть">✕</button>
+    <img id="modalImg" alt="Просмотр изображения">
+  </div>
+
+  <script>
+document.getElementById('y').textContent = new Date().getFullYear();
+
+    // ============================
+    // EDIT PANEL (edit-me.js)
+    // ============================
+    const EDIT_DEFAULT = {
+      promo: {
+        code: "NEW30",
+        marqueeText: "−30% для новых клиентов по промокоду NEW30",
+        badgeText: "NEW"
+      },
+      links: {
+        booking: "https://dikidi.net/g372810?p=0.sp",
+        whatsapp: "https://wa.me/79778178101",
+        telegram: "https://t.me/Depiteria",
+        yandexAll: "https://yandex.com/maps/213/moscow/chain/depiteria/153959652754/"
+      },
+      branches: [],
+      gallery: []
+    };
+
+    // Merge with user config (from edit-me.js)
+    const EDIT = (() => {
+      const user = window.DEPITERIA_EDIT || {};
+      const out = JSON.parse(JSON.stringify(EDIT_DEFAULT));
+      // shallow merge nested objects
+      out.promo = { ...out.promo, ...(user.promo || {}) };
+      out.links = { ...out.links, ...(user.links || {}) };
+      out.branches = Array.isArray(user.branches) ? user.branches : out.branches;
+      out.gallery  = Array.isArray(user.gallery)  ? user.gallery  : out.gallery;
+      return out;
+    })();
+
+    function applyEditConfig(){
+      // Promo code
+      const promoCodeSpan = document.querySelector('#promo .code span');
+      if (promoCodeSpan) promoCodeSpan.textContent = EDIT.promo.code;
+
+      // Update all booking links (except branches list; we rebuild it)
+      document.querySelectorAll('a[href*="dikidi"]').forEach(a => {
+        if (a.closest('#locations')) return;
+        a.setAttribute('href', EDIT.links.booking);
+      });
+
+      // Messenger links
+      document.querySelectorAll('a[href^="https://wa.me/"]').forEach(a => a.setAttribute('href', EDIT.links.whatsapp));
+      document.querySelectorAll('a[href^="https://t.me/"]').forEach(a => a.setAttribute('href', EDIT.links.telegram));
+
+      // Yandex “all branches” link
+      document.querySelectorAll('a[href*="yandex.com/maps"]').forEach(a => {
+        if (a.textContent.trim().toLowerCase().includes('филиалы')) {
+          a.setAttribute('href', EDIT.links.yandexAll);
+        }
+      });
+
+      // Branches list
+      const locs = document.querySelector('#locations .locs');
+      if (locs && Array.isArray(EDIT.branches) && EDIT.branches.length){
+        locs.innerHTML = '';
+        EDIT.branches.forEach(b => {
+          const el = document.createElement('div');
+          el.className = 'loc';
+          el.innerHTML = `
+            <div class="loc-main">
+              <div class="loc-title">${escapeHTML(b.title || '')}</div>
+              <div class="loc-addr">${escapeHTML(b.address || '')}</div>
+            </div>
+            <div class="loc-actions">
+              <a class="btn btn-primary btn-sm" href="${escapeAttr(b.booking || EDIT.links.booking)}" target="_blank" rel="noopener">Запись</a>
+            </div>
+          `;
+          locs.appendChild(el);
+        });
+      }
+
+      // Gallery grid
+      const gal = document.querySelector('#gallery .gallery');
+      if (gal && Array.isArray(EDIT.gallery) && EDIT.gallery.length){
+        gal.innerHTML = '';
+        EDIT.gallery.forEach((img, idx) => {
+          const btn = document.createElement('button');
+          // bottom 2 rows (index 3..8) are banner-like 4:3 images: keep full width, crop top/bottom
+          btn.className = 'g-item' + (idx >= 3 ? ' g-crop-banners' : '');
+          btn.setAttribute('data-full', img.full || img.src);
+          btn.setAttribute('aria-label', 'Открыть изображение');
+          btn.innerHTML = `<img src="${escapeAttr(img.src)}" alt="${escapeAttr(img.alt || 'Depiteria')}" loading="lazy">`;
+          gal.appendChild(btn);
+        });
+
+        // Gallery is uniformly cropped via CSS (see .g-item img { object-fit: cover; })
+      }
+
+      // Marquee
+      ensureMarquee();
+
+    }
+
+    // Basic escaping helpers (to avoid broken markup)
+    function escapeHTML(str){
+      return String(str).replace(/[&<>"']/g, s => ({
+        '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+      }[s]));
+    }
+    function escapeAttr(str){
+      return escapeHTML(str).replace(/`/g, '');
+    }
+
+    // ============================
+    // FX: bottom marquee (always-on)
+    // ============================
+    function ensureMarquee(){
+      if (document.getElementById('promoMarquee')) return;
+
+      const href = (EDIT && EDIT.links && EDIT.links.booking) ? EDIT.links.booking : '#';
+      const bar = document.createElement('a');
+      bar.className = 'marquee-bar';
+      bar.id = 'promoMarquee';
+      bar.href = href;
+      bar.target = '_blank';
+      bar.rel = 'noopener';
+
+      const track = document.createElement('div');
+      track.className = 'marquee-track';
+
+      const txt = (EDIT && EDIT.promo && EDIT.promo.marqueeText) ? EDIT.promo.marqueeText : '−30% для новых клиентов по промокоду NEW30';
+
+      // Repeat text to get seamless animation
+      track.innerHTML = `<span>${escapeHTML(txt)}</span><span>${escapeHTML(txt)}</span><span>${escapeHTML(txt)}</span><span>${escapeHTML(txt)}</span>`;
+
+      bar.appendChild(track);
+      document.body.appendChild(bar);
+    }
+
+
+    // ============================
+    // FX helpers (safe for mobile)
+    // ============================
+    const __reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const __coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+
+    // --- Cursor follower (desktop only) ---
+    (function cursorFollower(){
+      if (__reducedMotion || __coarsePointer) return;
+
+      const dot = document.createElement('div');
+      dot.className = 'cursor-fx';
+      document.body.appendChild(dot);
+
+      let tx = window.innerWidth * 0.5;
+      let ty = window.innerHeight * 0.5;
+      let x = tx, y = ty;
+
+      const lerp = (a,b,t)=> a + (b-a)*t;
+
+      window.addEventListener('mousemove', (e)=>{
+        tx = e.clientX; ty = e.clientY;
+      }, { passive: true });
+
+      window.addEventListener('mousedown', ()=>dot.classList.add('is-down'), { passive: true });
+      window.addEventListener('mouseup',   ()=>dot.classList.remove('is-down'), { passive: true });
+
+      const tick = ()=>{
+        x = lerp(x, tx, 0.16);
+        y = lerp(y, ty, 0.16);
+        dot.style.left = x + 'px';
+        dot.style.top  = y + 'px';
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    })();
+
+    // ============================
+    // FX: NEW badge rotation (existing .promo:before)
+    // ============================
+    (function rotateExistingNewBadgeOnScroll(){
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) return;
+
+      const promo = document.getElementById('promo');
+      if (!promo) return;
+
+      const factor = 0.15; // deg per px (smooth, reversible)
+      const onScroll = ()=>{
+        const y = window.scrollY || 0;
+        const angle = y * factor;
+        promo.style.setProperty('--newSpin', angle + 'deg');
+      };
+
+      // init + update
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    })();
+
+    (function flyInOnceManager(){
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      const showAll = () => {
+        document.querySelectorAll('.fly-hidden').forEach(el => el.classList.remove('fly-hidden'));
+      };
+
+      if (reduced){
+        showAll();
+        return;
+      }
+
+      const animateBallBounce = (el, dir /* -1 from left, +1 from right */) => {
+        const startX = dir * 140;
+        const bounce = -dir;
+
+        el.classList.remove('fly-hidden');
+        el.classList.add('fly-will');
+
+        const anim = el.animate([
+          { transform: `translateX(${startX}px)`, opacity: 0 },
+          { transform: 'translateX(0px)', opacity: 1, offset: 0.62 },
+          { transform: `translateX(${bounce * 36}px)`, opacity: 1, offset: 0.78 },
+          { transform: 'translateX(0px)', opacity: 1, offset: 0.88 },
+          { transform: `translateX(${bounce * 16}px)`, opacity: 1, offset: 0.95 },
+          { transform: 'translateX(0px)', opacity: 1, offset: 1 }
+        ], {
+          duration: 3600,
+          easing: 'cubic-bezier(.2,.85,.2,1)',
+          fill: 'both'
+        });
+
+        anim.onfinish = () => {
+          el.style.transform = '';
+          el.style.opacity = '';
+        };
+      };
+
+      // 1) Hero blocks (on load)
+      const heroLeft = document.querySelector('[data-fly-hero="left"]');
+      const heroRight = document.querySelector('[data-fly-hero="right"]');
+      requestAnimationFrame(() => {
+        if (heroLeft)  animateBallBounce(heroLeft, -1);
+        if (heroRight) animateBallBounce(heroRight,  1);
+      });
+
+      // 2) Scroll-reveals (when target is around the middle of the screen)
+      const targets = [];
+      targets.push(...Array.from(document.querySelectorAll('#services .card-top h3')));
+
+      const addSectionTargets = (id, includeP=false) => {
+        const sec = document.getElementById(id);
+        if (!sec) return;
+
+        // Support both section header variants used on the page
+        const h2 = sec.querySelector('.section-title h2, .section-head h2');
+        if (h2) targets.push(h2);
+
+        if (includeP){
+          const p = sec.querySelector('.section-title p, .section-head p');
+          if (p && p.textContent && p.textContent.trim().length) targets.push(p);
+        }
+      };
+
+      addSectionTargets('services', false);
+      addSectionTargets('prices', true);
+      addSectionTargets('locations', false);
+      addSectionTargets('gallery', false);
+      addSectionTargets('faq', false);
+      addSectionTargets('contacts', false);
+
+      const centerThreshold = () => window.innerHeight * 0.18;
+
+      const reveal = (el) => {
+        if (!el || el.dataset.flyDone === '1') return;
+
+        const rect = el.getBoundingClientRect();
+        const cx = rect.left + rect.width / 2;
+        const cy = rect.top + rect.height / 2;
+
+        // Only when near center
+        if (Math.abs(cy - window.innerHeight / 2) > centerThreshold()) return;
+
+        const dx = cx - (window.innerWidth / 2);
+        const dir = (Math.abs(dx) < window.innerWidth * 0.05) ? -1 : (dx < 0 ? -1 : 1);
+        el.dataset.flyDone = '1';
+        animateBallBounce(el, dir);
+      };
+
+      targets.forEach(el => el.classList.add('fly-hidden'));
+
+      const io = new IntersectionObserver((entries) => {
+        for (const e of entries){
+          if (e.isIntersecting) reveal(e.target);
+        }
+      }, {
+        // shrink root to a middle band
+        rootMargin: '-40% 0px -40% 0px',
+        threshold: 0.01
+      });
+
+      targets.forEach(el => io.observe(el));
+
+      // Fallback: on scroll, if IO misses an exact center hit
+      let raf = 0;
+      const onScroll = () => {
+        if (raf) return;
+        raf = requestAnimationFrame(() => {
+          raf = 0;
+          targets.forEach(el => {
+            if (el.dataset.flyDone === '1') return;
+            const r = el.getBoundingClientRect();
+            if (r.bottom < 0 || r.top > window.innerHeight) return;
+            reveal(el);
+          });
+        });
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', onScroll);
+      onScroll();
+
+    })();
+
+    // ============================
+    // Smart call buttons: mobile = звонок, desktop = копировать номер
+    // ============================
+    (function smartCallButtons(){
+      const btns = Array.from(document.querySelectorAll('[data-smart-call]'));
+      if (!btns.length) return;
+
+      const isMobile = () => window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 900;
+
+      const copyText = async (text) => {
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            await navigator.clipboard.writeText(text);
+            return true;
+          }
+        } catch (_){}
+
+        // Fallback
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          const ok = document.execCommand('copy');
+          document.body.removeChild(ta);
+          return ok;
+        } catch (_) {
+          return false;
+        }
+      };
+
+      btns.forEach(btn => {
+        btn.addEventListener('click', async () => {
+          const tel = btn.getAttribute('data-tel') || '';
+          const phone = btn.getAttribute('data-phone') || tel;
+
+          if (isMobile()) {
+            if (tel) window.location.href = `tel:${tel.replace(/\s+/g,'')}`;
+            return;
+          }
+
+          const ok = await copyText(phone.replace(/\u2011/g,'-')); // replace non-breaking hyphen
+          const prev = btn.textContent;
+          btn.textContent = ok ? 'Скопировано' : 'Номер';
+          setTimeout(() => { btn.textContent = prev; }, 1100);
+        });
+      });
+    })();
+    
+
+    const modal = document.getElementById('modal');
+    const modalImg = document.getElementById('modalImg');
+    const closeBtn = document.getElementById('close');
+
+    function openModal(src) {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      modalImg.src = src;
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    applyEditConfig();
+
+    document.querySelectorAll('.g-item').forEach(btn => {
+      btn.addEventListener('click', () => openModal(btn.dataset.full));
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+    closeBtn.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  
+
+    // Drawer (mobile menu)
+    const burger = document.getElementById('burger');
+    const drawer = document.getElementById('drawer');
+
+    const openDrawer = () => {
+      if (!drawer) return;
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      if (burger) burger.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+      setHeaderH();
+    };
+
+    const closeDrawer = () => {
+      if (!drawer) return;
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      if (burger) burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+      setHeaderH();
+    };
+
+    if (burger) burger.addEventListener('click', () => {
+      if (drawer && drawer.classList.contains('open')) closeDrawer();
+      else openDrawer();
+    });
+
+    if (drawer) {
+      drawer.querySelectorAll('[data-close="1"]').forEach(el => {
+        el.addEventListener('click', closeDrawer);
+      });
+      drawer.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', () => closeDrawer());
+      });
+    }
+
+    // Brand click: always scroll to real top (no "обрезания" первого экрана)
+    const brandHome = document.getElementById('brandHome');
+    if (brandHome) {
+      brandHome.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeDrawer();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+
+const topBar = document.querySelector('.top');
+    const setHeaderH = () => {
+      if (!topBar) return;
+      const h = Math.round(topBar.getBoundingClientRect().height);
+      document.documentElement.style.setProperty('--headerH', h + 'px');
+    };
+    window.addEventListener('resize', setHeaderH);
+    setHeaderH();
+</script>
+</body>
+</html>
