@@ -32,8 +32,8 @@ window.DEPITERIA_EDIT = {
     { title: "Римская / Площадь Ильича", address: "ул. Новорогожская, 8", booking: "https://dikidi.ru/684025" },
     { title: "Митино", address: "ул. Барышиха, 14к2", booking: "https://dikidi.ru/1308746" },
     { title: "Сокольники", address: "ул. Барболина, 4", booking: "https://dikidi.ru/1686191" },
-    { title: "Электрозаводская", address: "ул. Большая Почтовая, 18/20к15", booking: "https://dikidi.net/g372810?p=0.sp" },
-    { title: "Митино (Новотушинский)", address: "Новотушинский проезд, 6к1", booking: "https://dikidi.net/g372810?p=0.sp" }
+    { title: "Электрозаводская", address: "ул. Большая Почтовая, 71", booking: "https://dikidi.ru/1642774" },
+    { title: "Волоколамская", address: "Новотушинский проезд, 6к1", booking: "https://dikidi.ru/1438428" }
   ],
 
   // ====== Галерея (фото/баннеры) ======
